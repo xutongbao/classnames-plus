@@ -2,7 +2,7 @@ classnames-plus
 ===========
 
 
-A simple JavaScript utility for conditionally joining classnames-plus together.
+A simple JavaScript utility for conditionally joining classNames together.
 
 Install with [npm](https://www.npmjs.com/), [Bower](https://bower.io/), or [Yarn](https://yarnpkg.com/):
 
@@ -52,6 +52,31 @@ function () {
     }    
 });
 console.log(result);  // => 'btn btn-over fun-plus active'
+```
+
+in React:
+```js
+import React, { Component } from 'react';
+import classNamesPlus from 'classnames-plus';
+
+class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      tabActiveIndex: 0
+    }
+  }  
+  render() {
+    return (
+      <div className={classNamesPlus('m-sys-tab', () => {
+        return this.state.tabActiveIndex === 0 ? 'active': ''
+      })}>
+      </div>
+    );
+  }
+}
+
+export default App;
 ```
 
 
