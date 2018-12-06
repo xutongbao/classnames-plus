@@ -23,11 +23,14 @@ yarn add classnames-plus
 
 Use with [Node.js](https://nodejs.org/en/), [Browserify](http://browserify.org/), or [webpack](https://webpack.github.io/):
 
+Old functions are still available:
 ```js
 var classNamesPlus = require('classnames-plus');
 classNamesPlus('foo', 'bar'); // => 'foo bar'
 ```
 
+
+add functions:
 ```js
 var classNamesPlus = require('classnames-plus');
 var tabActiveIndex = 0;
