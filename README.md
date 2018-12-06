@@ -56,8 +56,9 @@ console.log(result);  // => 'btn btn-over fun-plus active'
 
 in React:
 ```js
-import React, { Component } from 'react';
-import classNamesPlus from 'classnames-plus';
+import React, { Component } from 'react'
+import classNamesPlus from 'classnames-plus'
+import './App.css'
 
 class App extends Component {
   constructor(props) {
@@ -65,13 +66,35 @@ class App extends Component {
     this.state = {
       tabActiveIndex: 0
     }
-  }  
+  } 
+  handleClick(tabActiveIndex) {
+    this.setState({tabActiveIndex})
+  } 
   render() {
     return (
-      <div className={classNamesPlus('m-sys-tab', () => {
-        return this.state.tabActiveIndex === 0 ? 'active': ''
-      })}>
-      </div>
+      <ul>
+        <li className={
+            classNamesPlus('m-tab', () => {
+              return this.state.tabActiveIndex === 0 ? 'active': ''
+            })
+          } 
+          onClick={this.handleClick.bind(this, 0)}>css
+        </li>
+        <li className={
+            classNamesPlus('m-tab', () => {
+              return this.state.tabActiveIndex === 1 ? 'active': ''
+            })
+          } 
+          onClick={this.handleClick.bind(this, 1)}>javascript
+        </li> 
+        <li className={
+            classNamesPlus('m-tab', () => {
+              return this.state.tabActiveIndex === 2 ? 'active': ''
+            })
+          } 
+          onClick={this.handleClick.bind(this, 2)}>html
+        </li>                
+      </ul>
     );
   }
 }

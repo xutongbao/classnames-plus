@@ -1,6 +1,6 @@
 {
   "name": "classnames-plus",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple utility for conditionally joining classnames-plus together",
   "main": "index.js",
   "author": "Xu Tongbao",
